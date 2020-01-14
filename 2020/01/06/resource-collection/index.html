@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>2020前端资源收集 | 升-fullstack</title><meta name="description" content="2020前端资源收集"><meta name="keywords" content=""><meta name="author" content="升-fullstack"><meta name="copyright" content="升-fullstack"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="preconnect" href="//cdn.jsdelivr.net"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="2020前端资源收集"><meta name="twitter:description" content="2020前端资源收集"><meta name="twitter:image" content="https://static.runoob.com/images/mix/4781442-d6a8c2e5714b4c44.png"><meta property="og:type" content="article"><meta property="og:title" content="2020前端资源收集"><meta property="og:url" content="http://yoursite.com/2020/01/06/resource-collection/"><meta property="og:site_name" content="升-fullstack"><meta property="og:description" content="2020前端资源收集"><meta property="og:image" content="https://static.runoob.com/images/mix/4781442-d6a8c2e5714b4c44.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.15/dist/snackbar.min.css"><link rel="canonical" href="http://yoursite.com/2020/01/06/resource-collection/"><link rel="next" title="前端拖入文件上传" href="http://yoursite.com/2019/12/31/drag-into-picture/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://zls1018562276.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  copyright: undefined,
+  copy_copyright_js: false,
+  ClickShowText: undefined,
+  medium_zoom: 'true',
+  Snackbar: {"bookmark":{"title":"Snackbar.bookmark.title","message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"}
+  
+}</script><meta name="generator" content="Hexo 4.1.1"></head><body><div id="header"> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">升-fullstack</a></span><i class="fa fa-bars fa-fw toggle-menu pull_right close" aria-hidden="true"></i><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div></span><span class="pull_right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lazyload avatar_img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">7</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#打包工具"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">打包工具</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#webpack-loader-和插件"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">webpack loader 和插件</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#包管理"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">包管理</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#框架"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">框架</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Canvas相关"><span class="toc_mobile_items-number">4.1.</span> <span class="toc_mobile_items-text">Canvas相关</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#APP相关"><span class="toc_mobile_items-number">4.2.</span> <span class="toc_mobile_items-text">APP相关</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#小程序相关"><span class="toc_mobile_items-number">4.3.</span> <span class="toc_mobile_items-text">小程序相关</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#UI相关（Mobile）"><span class="toc_mobile_items-number">4.4.</span> <span class="toc_mobile_items-text">UI相关（Mobile）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#UI相关（PC）"><span class="toc_mobile_items-number">4.5.</span> <span class="toc_mobile_items-text">UI相关（PC）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#其他"><span class="toc_mobile_items-number">4.6.</span> <span class="toc_mobile_items-text">其他</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#React相关库"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">React相关库</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#Vue相关库"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">Vue相关库</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#阿里系"><span class="toc_mobile_items-number">7.</span> <span class="toc_mobile_items-text">阿里系</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#工具类"><span class="toc_mobile_items-number">8.</span> <span class="toc_mobile_items-text">工具类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#数据流"><span class="toc_mobile_items-number">9.</span> <span class="toc_mobile_items-text">数据流</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#语言"><span class="toc_mobile_items-number">10.</span> <span class="toc_mobile_items-text">语言</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#文档"><span class="toc_mobile_items-number">11.</span> <span class="toc_mobile_items-text">文档</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#工程"><span class="toc_mobile_items-number">12.</span> <span class="toc_mobile_items-text">工程</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#编辑器"><span class="toc_mobile_items-number">13.</span> <span class="toc_mobile_items-text">编辑器</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#命令行"><span class="toc_mobile_items-number">14.</span> <span class="toc_mobile_items-text">命令行</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#请求处理"><span class="toc_mobile_items-number">15.</span> <span class="toc_mobile_items-text">请求处理</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#富文本相关"><span class="toc_mobile_items-number">16.</span> <span class="toc_mobile_items-text">富文本相关</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#持续集成"><span class="toc_mobile_items-number">17.</span> <span class="toc_mobile_items-text">持续集成</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#在线工具"><span class="toc_mobile_items-number">18.</span> <span class="toc_mobile_items-text">在线工具</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#在线编辑"><span class="toc_mobile_items-number">18.1.</span> <span class="toc_mobile_items-text">在线编辑</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#图标管理"><span class="toc_mobile_items-number">18.2.</span> <span class="toc_mobile_items-text">图标管理</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#其他在线工具"><span class="toc_mobile_items-number">18.3.</span> <span class="toc_mobile_items-text">其他在线工具</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#代码高亮"><span class="toc_mobile_items-number">19.</span> <span class="toc_mobile_items-text">代码高亮</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#音频-视频"><span class="toc_mobile_items-number">20.</span> <span class="toc_mobile_items-text">音频&#x2F;视频</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#数据可视化库"><span class="toc_mobile_items-number">21.</span> <span class="toc_mobile_items-text">数据可视化库</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#动画库"><span class="toc_mobile_items-number">22.</span> <span class="toc_mobile_items-text">动画库</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#数据模拟"><span class="toc_mobile_items-number">23.</span> <span class="toc_mobile_items-text">数据模拟</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#调试工具"><span class="toc_mobile_items-number">24.</span> <span class="toc_mobile_items-text">调试工具</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#其他-1"><span class="toc_mobile_items-number">25.</span> <span class="toc_mobile_items-text">其他</span></a></li></ol></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#打包工具"><span class="toc-number">1.</span> <span class="toc-text">打包工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack-loader-和插件"><span class="toc-number">2.</span> <span class="toc-text">webpack loader 和插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#包管理"><span class="toc-number">3.</span> <span class="toc-text">包管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#框架"><span class="toc-number">4.</span> <span class="toc-text">框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas相关"><span class="toc-number">4.1.</span> <span class="toc-text">Canvas相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APP相关"><span class="toc-number">4.2.</span> <span class="toc-text">APP相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小程序相关"><span class="toc-number">4.3.</span> <span class="toc-text">小程序相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI相关（Mobile）"><span class="toc-number">4.4.</span> <span class="toc-text">UI相关（Mobile）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI相关（PC）"><span class="toc-number">4.5.</span> <span class="toc-text">UI相关（PC）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React相关库"><span class="toc-number">5.</span> <span class="toc-text">React相关库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue相关库"><span class="toc-number">6.</span> <span class="toc-text">Vue相关库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#阿里系"><span class="toc-number">7.</span> <span class="toc-text">阿里系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工具类"><span class="toc-number">8.</span> <span class="toc-text">工具类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据流"><span class="toc-number">9.</span> <span class="toc-text">数据流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#语言"><span class="toc-number">10.</span> <span class="toc-text">语言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文档"><span class="toc-number">11.</span> <span class="toc-text">文档</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工程"><span class="toc-number">12.</span> <span class="toc-text">工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编辑器"><span class="toc-number">13.</span> <span class="toc-text">编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命令行"><span class="toc-number">14.</span> <span class="toc-text">命令行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#请求处理"><span class="toc-number">15.</span> <span class="toc-text">请求处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#富文本相关"><span class="toc-number">16.</span> <span class="toc-text">富文本相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#持续集成"><span class="toc-number">17.</span> <span class="toc-text">持续集成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在线工具"><span class="toc-number">18.</span> <span class="toc-text">在线工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在线编辑"><span class="toc-number">18.1.</span> <span class="toc-text">在线编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图标管理"><span class="toc-number">18.2.</span> <span class="toc-text">图标管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他在线工具"><span class="toc-number">18.3.</span> <span class="toc-text">其他在线工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码高亮"><span class="toc-number">19.</span> <span class="toc-text">代码高亮</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#音频-视频"><span class="toc-number">20.</span> <span class="toc-text">音频&#x2F;视频</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据可视化库"><span class="toc-number">21.</span> <span class="toc-text">数据可视化库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动画库"><span class="toc-number">22.</span> <span class="toc-text">动画库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据模拟"><span class="toc-number">23.</span> <span class="toc-text">数据模拟</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调试工具"><span class="toc-number">24.</span> <span class="toc-text">调试工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他-1"><span class="toc-number">25.</span> <span class="toc-text">其他</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://static.runoob.com/images/mix/4781442-d6a8c2e5714b4c44.png)"><div id="post-info"><div id="post-title"><div class="posttitle">2020前端资源收集</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-01-06<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-01-14</time><div class="post-meta-wordcount"><i class="fa fa-file-word-o post-meta__icon" aria-hidden="true"></i><span>字数总计: </span><span class="word-count">4.4k</span><span class="post-meta__separator">|</span><i class="fa fa-clock-o post-meta__icon" aria-hidden="true"></i><span>阅读时长: 15 分钟</span><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true">       </i><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p>2020新的开始，前端资源整合！<br>跳转链接大部分都是github，英文较多，有其他需要可以根据名称百度查找<br>以下资源收集及整理由<a href="https://juejin.im/post/5e0bef0ff265da5d782160e8" target="_blank" rel="noopener">牙千儿</a>提供</p>
+<h1 id="打包工具"><a href="#打包工具" class="headerlink" title="打包工具"></a>打包工具</h1><ul>
+<li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener">webpack</a> - 打包项目</li>
+<li><a href="https://github.com/parcel-bundler/parcel" target="_blank" rel="noopener">parcel</a> - 打包项目与webpack相同，但使用较少</li>
+<li><a href="https://github.com/rollup/rollup" target="_blank" rel="noopener">rollup</a> - 打包npm库</li>
+<li><a href="https://github.com/egoist/bili" target="_blank" rel="noopener">bili</a> - 基于 rollup，简化配置</li>
+<li><a href="https://github.com/developit/microbundle" target="_blank" rel="noopener">microbundle</a> - 基于 rollup，简化配置</li>
+<li><a href="https://github.com/webpack/webpack-dev-server" target="_blank" rel="noopener">webpack-dev-server</a> - webpack 开发服务器</li>
+<li><a href="https://github.com/webpack/webpack-dev-middleware" target="_blank" rel="noopener">webpack-dev-middleware</a> - webpack 中间件</li>
+<li><a href="https://github.com/survivejs/webpack-merge" target="_blank" rel="noopener">webpack-merge</a> - 合并 webpack 配置</li>
+<li><a href="https://github.com/neutrinojs/webpack-chain" target="_blank" rel="noopener">webpack-chain</a> - 通过 chain 风格 api 的方式修改 webpack 配置</li>
+<li><a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">vue-cli</a> - vue 官方脚手架</li>
+<li><a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a> - react 官方脚手架</li>
+<li><a href="https://github.com/swc-project/swc" target="_blank" rel="noopener">swc</a> - 基于 rust 的语法转换器，babel 的竞争者</li>
+<li><a href="https://github.com/nathan/pax" target="_blank" rel="noopener">nathan/pax</a> - 基于 rust，JavaScript 打包工具</li>
+<li><a href="https://github.com/pikapkg/snowpack" target="_blank" rel="noopener">pikapkg/web</a> - 浏览器里跑 npm 依赖，面向主流浏览器</li>
+<li><a href="https://github.com/lebab/lebab" target="_blank" rel="noopener">lebab/lebab</a> - 把 es5 代码转成 es6，反向 babel</li>
+</ul>
+<h1 id="webpack-loader-和插件"><a href="#webpack-loader-和插件" class="headerlink" title="webpack loader 和插件"></a>webpack loader 和插件</h1><ul>
+<li><a href="https://github.com/mzgoddard/hard-source-webpack-plugin" target="_blank" rel="noopener">hard-source-webpack-plugin</a> - 性能提升 70%</li>
+<li><a href="https://github.com/gregberge/svgr" target="_blank" rel="noopener">svgr</a> - svg 转 react 组件</li>
+<li><a href="https://github.com/postcss/postcss" target="_blank" rel="noopener">postcss</a> - CSS 的 babel</li>
+<li><a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">autoprefixer</a> - 为 CSS 选择权自动加 prefix</li>
+<li><a href="https://github.com/nuxt/webpackbar" target="_blank" rel="noopener">webpackbar</a> - webpack 进度条</li>
+<li><a href="https://github.com/webpack-contrib/webpack-bundle-analyzer" target="_blank" rel="noopener">webpack-bundle-analyzer</a> - 构建产物占比分析</li>
+<li><a href="https://github.com/danethurber/webpack-manifest-plugin" target="_blank" rel="noopener">webpack-manifest-plugin</a> - 生成 manifest.json</li>
+<li><a href="https://github.com/webpack-contrib/mini-css-extract-plugin" target="_blank" rel="noopener">mini-css-extract-plugin</a> - 提取 CSS 为单独文件</li>
+<li><a href="https://github.com/webpack-contrib/copy-webpack-plugin" target="_blank" rel="noopener">copy-webpack-plugin</a> -  复制额外的文件到输出目录</li>
+<li><a href="https://github.com/Urthen/case-sensitive-paths-webpack-plugin" target="_blank" rel="noopener">case-sensitive-paths-webpack-plugin</a> - 大小写敏感检测，能规避一些问题，但构建时性能消耗较大</li>
+<li><a href="https://github.com/shepherdwind/css-hot-loader" target="_blank" rel="noopener">css-hot-loader</a> - CSS 热更新，搭配 mini-css-extract-plugin 使用</li>
+<li><a href="https://github.com/darrenscerri/duplicate-package-checker-webpack-plugin" target="_blank" rel="noopener">duplicate-package-checker-webpack-plugin</a> - 重复依赖检测</li>
+<li><a href="https://github.com/TypeStrong/fork-ts-checker-webpack-plugin" target="_blank" rel="noopener">fork-ts-checker-webpack-plugin</a> - ts 语法检测</li>
+<li><a href="https://github.com/stephencookdev/speed-measure-webpack-plugin" target="_blank" rel="noopener">speed-measure-webpack-plugin</a> - 统计 webpack 各阶段耗时</li>
+</ul>
+<h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><ul>
+<li><a href="https://github.com/yarnpkg/yarn" target="_blank" rel="noopener">yarn</a></li>
+<li><a href="https://github.com/npm/cli" target="_blank" rel="noopener">npm</a></li>
+<li><a href="https://bower.io/" target="_blank" rel="noopener">bower</a></li>
+</ul>
+<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="Canvas相关"><a href="#Canvas相关" class="headerlink" title="Canvas相关"></a>Canvas相关</h2><ul>
+<li><a href="https://github.com/cocos2d/cocos2d-html5" target="_blank" rel="noopener">cocos2d-html5</a></li>
+<li><a href="https://www.egret.com/" target="_blank" rel="noopener">Egret Engine</a></li>
+<li><a href="https://github.com/digitalfruit/limejs" target="_blank" rel="noopener">LimeJS</a></li>
+<li><a href="https://github.com/CreateJS/EaselJS" target="_blank" rel="noopener">EaselJS</a></li>
+<li><a href="https://github.com/mrdoob/three.js" target="_blank" rel="noopener">three.js</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyStick" target="_blank" rel="noopener">AlloyStick</a></li>
+<li><a href="https://github.com/finscn/The-Best-JS-Game-Framework" target="_blank" rel="noopener">The-Best-JS-Game-Framework</a></li>
+<li><a href="https://github.com/RSamaium/CanvasEngine" target="_blank" rel="noopener">CanvasEngine</a></li>
+<li><a href="https://github.com/cykod/Quintus" target="_blank" rel="noopener">Quintus</a></li>
+<li><a href="https://github.com/shakiba/stage.js" target="_blank" rel="noopener">Stage.js</a></li>
+<li><a href="https://github.com/photonstorm/phaser" target="_blank" rel="noopener">phaser</a></li>
+<li><a href="https://github.com/lufylegend/lufylegend.js" target="_blank" rel="noopener">lufylegend.js</a></li>
+<li><a href="https://github.com/pixijs/pixi.js" target="_blank" rel="noopener">pixi.js</a></li>
+</ul>
+<h2 id="APP相关"><a href="#APP相关" class="headerlink" title="APP相关"></a>APP相关</h2><ul>
+<li><a href="https://github.com/apache/incubator-weex" target="_blank" rel="noopener">Weex</a></li>
+<li><a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React-native</a></li>
+<li><a href="https://github.com/dcloudio/mui" target="_blank" rel="noopener">Mui</a></li>
+<li><a href="https://github.com/jaunesarmiento/fries" target="_blank" rel="noopener">Fries</a></li>
+<li><a href="https://github.com/flutter/flutter" target="_blank" rel="noopener">Flutter</a></li>
+<li><a href="https://uniapp.dcloud.io/" target="_blank" rel="noopener">uni-app</a> - 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉）等多个平台。</li>
+</ul>
+<h2 id="小程序相关"><a href="#小程序相关" class="headerlink" title="小程序相关"></a>小程序相关</h2><ul>
+<li><a href="https://github.com/Meituan-Dianping/mpvue" target="_blank" rel="noopener">mpvue</a> - 基于 Vue.js 的小程序开发框架，从底层支持 Vue.js 语法和构建工具体系</li>
+<li><a href="https://github.com/Tencent/wepy" target="_blank" rel="noopener">wepy</a> - 小程序组件化开发框架</li>
+<li><a href="https://github.com/weilanwl/ColorUI" target="_blank" rel="noopener">ColorUI</a> - 鲜亮的高饱和色彩，专注视觉的组件库</li>
+<li><a href="https://github.com/Tencent/westore" target="_blank" rel="noopener">westore</a> - 微信小程序解决方案 - 1KB javascript 覆盖状态管理、跨页通讯、插件开发和云数据库开发</li>
+<li><a href="https://github.com/huangjianke/Gitter" target="_blank" rel="noopener">Gitter</a> - 采用 Taro 框架 + Taro UI 进行开发的 demo ， 可能是目前颜值最高的 GitHub 微信小程序客户端</li>
+<li><a href="https://uniapp.dcloud.io/" target="_blank" rel="noopener">uni-app</a> - 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉）等多个平台。</li>
+<li><a href="https://remaxjs.org/" target="_blank" rel="noopener">Remax</a> - 将 React 运行在小程序环境中，让你可以使用完整的 React 进行小程序开发</li>
+<li><a href="https://taro.jd.com/" target="_blank" rel="noopener">Taro</a> - 一套遵循 React 语法规范的 多端开发 解决方案。</li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/extended/kbone/" target="_blank" rel="noopener">Kbnoe</a> - 用于支持一个项目可以同时在 Web 端和小程序端被使用</li>
+<li><a href="https://didi.github.io/mpx/" target="_blank" rel="noopener">Mpx</a> - 一款致力于提高小程序开发体验的增强型小程序框架，通过Mpx，我们能够以最先进的web开发体验来开发生产性能深度优化的小程序</li>
+<li><a href="https://megalojs.org/#/" target="_blank" rel="noopener">Megalo</a> - 基于 Vue（<a href="mailto:Vue@2.6.6">Vue@2.6.6</a>） 的小程序开发框架，让开发者可以用 Vue 的开发方式开发小程序应用</li>
+<li><a href="https://rubylouvre.github.io/nanachi/" target="_blank" rel="noopener">nanachi</a> - 基于 React 的多端小程序转译框架,完美兼容 React 生命周期</li>
+</ul>
+<h2 id="UI相关（Mobile）"><a href="#UI相关（Mobile）" class="headerlink" title="UI相关（Mobile）"></a>UI相关（Mobile）</h2><ul>
+<li><a href="https://youzan.github.io/vant/#/zh-CN/" target="_blank" rel="noopener">Vant</a></li>
+<li><a href="https://didi.github.io/cube-ui/#/zh-CN" target="_blank" rel="noopener">Cube UI</a></li>
+<li><a href="https://didi.github.io/mand-mobile/#/en-US/home" target="_blank" rel="noopener">Mand Mobile</a></li>
+<li><a href="https://vux.li/" target="_blank" rel="noopener">VUX</a></li>
+<li><a href="https://weex.apache.org/" target="_blank" rel="noopener">Weex</a></li>
+<li><a href="https://mobile.ant.design/index-cn" target="_blank" rel="noopener">Ant Design Mobile</a></li>
+<li><a href="https://didi.github.io/pile.js/#/?_k=p6qj17" target="_blank" rel="noopener">Pile</a></li>
+</ul>
+<h2 id="UI相关（PC）"><a href="#UI相关（PC）" class="headerlink" title="UI相关（PC）"></a>UI相关（PC）</h2><ul>
+<li><a href="https://element.eleme.cn/#/zh-CN" target="_blank" rel="noopener">Element UI</a></li>
+<li><a href="https://www.iviewui.com/" target="_blank" rel="noopener">View UI</a></li>
+<li><a href="https://vuejs.github.io/ui/#/" target="_blank" rel="noopener">Vue UI Framework</a></li>
+<li><a href="https://vuetifyjs.com/zh-Hans/" target="_blank" rel="noopener">Vuetify</a></li>
+<li><a href="https://muse-ui.org/#/zh-CN" target="_blank" rel="noopener">Muse-UI</a></li>
+<li><a href="https://www.heyui.top/" target="_blank" rel="noopener">HeyUI</a></li>
+<li><a href="https://baidu.github.io/san/" target="_blank" rel="noopener">San</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="https://github.com/facebook/react" target="_blank" rel="noopener">React</a></li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue</a></li>
+<li><a href="https://github.com/zeit/next.js" target="_blank" rel="noopener">next.js</a></li>
+<li><a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener">nuxt.js</a></li>
+<li><a href="https://github.com/gatsbyjs/gatsby" target="_blank" rel="noopener">gastby</a></li>
+<li><a href="https://github.com/umijs/umi" target="_blank" rel="noopener">umi</a> - 蚂蚁金服的前端框架</li>
+<li><a href="https://github.com/rekit/rekit" target="_blank" rel="noopener">rekit</a></li>
+<li><a href="https://github.com/choojs/choo" target="_blank" rel="noopener">choo</a> - dva 最初的 API 是参考这个实现的，已经不怎么发展了，再关注一段时间</li>
+<li><a href="https://github.com/mint-lang/mint" target="_blank" rel="noopener">mint</a> - 提供了语言层方案的框架</li>
+<li><a href="https://github.com/quasarframework/quasar" target="_blank" rel="noopener">quasar</a> - 基于 vue，一套代码多处适用</li>
+<li><a href="https://github.com/angular/angular" target="_blank" rel="noopener">Angular</a></li>
+<li><a href="https://github.com/foundation/foundation-sites" target="_blank" rel="noopener">Foundation</a> - 提供了语言层方案的框架</li>
+<li><a href="https://www.polymer-project.org/" target="_blank" rel="noopener">Polymer</a> - Google发布的Web组件构建框架</li>
+</ul>
+<h1 id="React相关库"><a href="#React相关库" class="headerlink" title="React相关库"></a>React相关库</h1><ul>
+<li><a href="https://react-router.docschina.org/" target="_blank" rel="noopener">React-Router</a> - 官方路由库</li>
+<li><a href="https://github.com/router5/router5" target="_blank" rel="noopener">router5</a> - 通用的路由方案</li>
+<li><a href="https://github.com/jamiebuilds/react-loadable" target="_blank" rel="noopener">react-loadable</a> - 按需加载React组件</li>
+<li><a href="https://github.com/infernojs/inferno" target="_blank" rel="noopener">inferno</a> - 轻量级React实现</li>
+<li><a href="https://github.com/preactjs/preact" target="_blank" rel="noopener">preact</a> - 轻量级React实现</li>
+<li><a href="https://github.com/formatjs/react-intl" target="_blank" rel="noopener">react-intl</a> - React的国际化方案</li>
+<li><a href="https://github.com/react-dnd/react-dnd" target="_blank" rel="noopener">react-dnd</a> - 拖拽实现</li>
+<li><a href="https://github.com/nfl/react-helmet" target="_blank" rel="noopener">react-helmet</a> - 修改html的header内容</li>
+</ul>
+<h1 id="Vue相关库"><a href="#Vue相关库" class="headerlink" title="Vue相关库"></a>Vue相关库</h1><ul>
+<li><a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router</a> - 路由库</li>
+<li><a href="https://github.com/xyxiao001/vue-cropper" target="_blank" rel="noopener">vue-cropper</a> -  一个简单的图片剪辑插件，支持海报图片剪辑</li>
+<li><a href="https://github.com/TaroXin/vue-pretty-logger" target="_blank" rel="noopener">vue-pretty-logger</a> - 本编辑器的 Vue 版</li>
+<li><a href="https://github.com/fe6/vue-icon" target="_blank" rel="noopener">vue-icon</a> - 简单的 icon 组件</li>
+<li><a href="https://github.com/Dafrok/vue-baidu-map" target="_blank" rel="noopener">vue-baidu-map</a> - 百度地图的 vue 版</li>
+<li><a href="https://github.com/SortableJS/Vue.Draggable" target="_blank" rel="noopener">Vue.Draggable</a> - 基于Sortable.js的Vue拖放组件</li>
+<li><a href="https://github.com/surmon-china/vue-codemirror" target="_blank" rel="noopener">vue-codemirror</a> - codemirror 的 vue 封装</li>
+<li><a href="https://github.com/vuejs/vue-apollo" target="_blank" rel="noopener">vue-apollo</a> - 连接 Vue 和 GraphQL/Apollo 的一座桥梁</li>
+<li><a href="https://github.com/zulko/eagle.js" target="_blank" rel="noopener">eagle.js</a> -  一个使用 Vue 构建的功能强大、灵活且独特的幻灯片系统</li>
+<li><a href="https://github.com/xiaokaike/vue-color" target="_blank" rel="noopener">vue-color</a> -  颜色选择器</li>
+<li><a href="https://github.com/zenghao0219/seat-select" target="_blank" rel="noopener">seat-select</a> -  选座 C 端</li>
+<li><a href="https://github.com/zenghao0219/seat-select-controller" target="_blank" rel="noopener">seat-select-controller</a> -  选座 B 端后台</li>
+<li><a href="https://github.com/staven630/vue-cli4-config" target="_blank" rel="noopener">vue-cli3-config</a> -  Vue-cli3 配置 vue.config.js</li>
+<li><a href="https://github.com/flatlogic/sing-app-vue-dashboard" target="_blank" rel="noopener">sing-app-vue-dashboard</a> - Sing App Vue 仪表板</li>
+<li><a href="https://github.com/DivanteLtd/vue-storefront" target="_blank" rel="noopener">vue-storefront</a> - 这是一个 PWA 应用，可以与任何后端（或几乎任何后端）连接</li>
+<li><a href="https://github.com/Akryum/vue-virtual-scroller" target="_blank" rel="noopener">vue-virtual-scroller</a> - 快速滚动条</li>
+<li><a href="https://github.com/nathanreyes/v-calendar" target="_blank" rel="noopener">v-calendar</a> - 用于构建日历的无依赖插件</li>
+<li><a href="https://github.com/viljamis/vue-design-system" target="_blank" rel="noopener">vue-design-system</a> - 一组 UI 工具</li>
+<li><a href="https://github.com/flatlogic/light-blue-vue-admin" target="_blank" rel="noopener">light-blue-vue-admin</a> - 用于管理信息中心的 Vue.js 模板</li>
+<li><a href="https://github.com/jbaysolutions/vue-grid-layout" target="_blank" rel="noopener">vue-grid-layout</a> - Vue.js 的网格布局</li>
+<li><a href="https://github.com/egoist/vue-content-loader" target="_blank" rel="noopener">vue-content-loader</a> - 创建占位符加载</li>
+<li><a href="https://github.com/euvl/vue-js-modal" target="_blank" rel="noopener">vue-js-modal</a> - 高度可定制的 Modal</li>
+<li><a href="https://github.com/asika32764/vue2-animate" target="_blank" rel="noopener">vue2-animate</a> - 集成 Animate.css 的动画库</li>
+<li><a href="https://github.com/stegosource/vuetensils" target="_blank" rel="noopener">vuetensils</a> - 一些常用组件</li>
+<li><a href="https://github.com/easy-team/easyjs" target="_blank" rel="noopener">easyjs</a> - 拥有 Egg Vue SSR 服务端渲染</li>
+</ul>
+<h1 id="阿里系"><a href="#阿里系" class="headerlink" title="阿里系"></a>阿里系</h1><ul>
+<li><a href="https://github.com/ant-design/ant-design" target="_blank" rel="noopener">ant-design</a> - 蚂蚁金服的 React UI 库</li>
+<li><a href="https://github.com/antvis" target="_blank" rel="noopener">antvis</a> - 数据可视化集合</li>
+<li><a href="https://github.com/ant-design/ant-motion" target="_blank" rel="noopener">ant-motion</a> - 动画说明和Ant设计组件</li>
+</ul>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><ul>
+<li><a href="https://github.com/ReactTraining/history" target="_blank" rel="noopener">history</a> - 管理历史堆栈、导航和持久化状态</li>
+<li><a href="https://github.com/pillarjs/path-to-regexp" target="_blank" rel="noopener">path-to-regexp</a> - path 转正则，路由相关处理的底层库</li>
+<li><a href="https://github.com/lodash/lodash" target="_blank" rel="noopener">lodash</a> - 工具集合</li>
+<li><a href="https://github.com/ftlabs/fastclick" target="_blank" rel="noopener">fastclick</a> - 消除事件延迟</li>
+<li><a href="https://github.com/date-fns/date-fns" target="_blank" rel="noopener">date-fns</a> - 时间处理</li>
+<li><a href="https://github.com/immutable-js/immutable-js" target="_blank" rel="noopener">immutable-js</a> - 数据集控制</li>
+<li><a href="https://github.com/bendc/sprint" target="_blank" rel="noopener">sprint</a> - 适用于现代浏览器的高性能的5KB(Gzip)DOM库。Sprint显着地体现在带宽和资源受限的设备上</li>
+<li><a href="https://github.com/iamkun/dayjs" target="_blank" rel="noopener">dayjs</a> - 在javascript中解析，验证，操作和显示日期，类似 moment</li>
+<li><a href="https://github.com/taylorhakes/fecha" target="_blank" rel="noopener">fecha</a> - 小巧的时间格式化库</li>
+<li><a href="https://github.com/nhn/tui.calendar" target="_blank" rel="noopener">tui.calendar</a> - 日历库</li>
+<li><a href="https://github.com/em-fe/em-cookie" target="_blank" rel="noopener">em-cookie</a> - cookie 的处理</li>
+<li><a href="https://github.com/em-fe/EM-NORMALIZE" target="_blank" rel="noopener">EM-NORMALIZE</a> - 样式重置</li>
+<li><a href="https://github.com/modernizr/modernizr" target="_blank" rel="noopener">modernizr</a> - 可以在用户的​​浏览器中检测HTML5和CSS3功能</li>
+<li><a href="https://github.com/gpujs/gpu.js" target="_blank" rel="noopener">gpu.js</a> - GPU 加速</li>
+<li><a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener">js-cookie</a> - cookie 的封装</li>
+<li><a href="https://github.com/moment/moment" target="_blank" rel="noopener">moment</a> - 在javascript中解析，验证，操作和显示日期</li>
+<li><a href="https://github.com/dtao/lazy.js" target="_blank" rel="noopener">lazy.js</a> - 累死underscore.js 的工具库</li>
+<li><a href="https://github.com/liriliri/licia" target="_blank" rel="noopener">licia</a></li>
+<li><a href="https://github.com/jashkenas/underscore" target="_blank" rel="noopener">underscore.js</a></li>
+<li><a href="https://github.com/ai/nanoid" target="_blank" rel="noopener">nanoid</a> - 一款非常小巧的唯一 ID 生成工具</li>
+<li><a href="https://github.com/jaywcjlove/hotkeys" target="_blank" rel="noopener">hotkeys</a> - 键盘按键的封装，如 ctrl+r</li>
+<li><a href="https://github.com/lindell/JsBarcode" target="_blank" rel="noopener">JsBarcode</a> - js 生成条形码(条码)</li>
+<li><a href="https://github.com/GoogleChromeLabs/comlink" target="_blank" rel="noopener">comlink</a> - 让 WebWorker 更好用</li>
+<li><a href="https://github.com/vitalets/await-timeout" target="_blank" rel="noopener">await-timeout</a> - Timeout 依托 Promise 的封装</li>
+<li><a href="https://github.com/lindell/JsBarcode" target="_blank" rel="noopener">dsa.js</a> - 数据结构及方法</li>
+<li><a href="https://github.com/sudodoki/copy-to-clipboard" target="_blank" rel="noopener">copy-to-clipboard</a> - 复制的插件</li>
+<li><a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">tesseract.js</a> - 图片的文字识别工具</li>
+<li><a href="https://github.com/svgdotjs/svg.js" target="_blank" rel="noopener">svg.js</a> - SVG 动画</li>
+<li><a href="https://github.com/niklasvh/html2canvas" target="_blank" rel="noopener">html2canvas</a> - HTML 排版，用 canvas 截图</li>
+<li><a href="https://github.com/shipshapecode/shepherd" target="_blank" rel="noopener">shepherd</a> - 引导您的用户浏览您的应用</li>
+<li><a href="https://github.com/usablica/intro.js" target="_blank" rel="noopener">intro.js</a> - 为您的网站和项目提供新功能介绍和逐步用户指南的更好方式可用于新手指引，功能介绍，更新指引等</li>
+<li><a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">crypto-js</a> - 加密标准的JavaScript库</li>
+<li><a href="https://github.com/ulid/javascript" target="_blank" rel="noopener">ulid</a> - 生成UUID类库</li>
+<li><a href="http://www.ohdave.com/rsa/" target="_blank" rel="noopener">RSA</a> - 用 RSA 加密实现 Web 数据加密传输</li>
+<li><a href="https://github.com/hotoo/detector" target="_blank" rel="noopener">detector</a> - 客户端环境识别</li>
+<li><a href="https://github.com/faisalman/ua-parser-js" target="_blank" rel="noopener">ua-parser-js</a> - 客户端环境识别， userAgent</li>
+<li><a href="https://github.com/bestiejs/platform.js" target="_blank" rel="noopener">platform.js</a> - 平台检测库</li>
+<li><a href="https://github.com/neocotic/qrious" target="_blank" rel="noopener">qrious</a> - 用于使用 Canvas 生成二维码</li>
+<li><a href="https://github.com/kciter/qart.js" target="_blank" rel="noopener">qart.js</a> - 生成艺术二维码</li>
+</ul>
+<h1 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h1><ul>
+<li><a href="https://github.com/reduxjs/redux" target="_blank" rel="noopener">redux</a></li>
+<li><a href="https://github.com/immerjs/immer" target="_blank" rel="noopener">immer</a></li>
+<li><a href="https://github.com/mobxjs/mobx" target="_blank" rel="noopener">mobx</a></li>
+<li><a href="https://github.com/jamiebuilds/unstated" target="_blank" rel="noopener">unstated</a></li>
+<li><a href="https://github.com/ReactiveX/rxjs" target="_blank" rel="noopener">rxjs</a></li>
+<li><a href="https://github.com/dvajs/dva" target="_blank" rel="noopener">dva</a></li>
+<li><a href="https://github.com/rematch/rematch" target="_blank" rel="noopener">rematch</a></li>
+<li><a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">vuex</a></li>
+<li><a href="https://github.com/ngrx/platform" target="_blank" rel="noopener">ngrx</a></li>
+</ul>
+<h1 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h1><ul>
+<li><a href="https://github.com/Microsoft/TypeScript" target="_blank" rel="noopener">TypeScript</a></li>
+<li><a href="https://github.com/facebook/flow" target="_blank" rel="noopener">Flow</a></li>
+<li><a href="https://github.com/graphql/graphql-js" target="_blank" rel="noopener">Graphql</a></li>
+</ul>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><ul>
+<li><a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener">vuepress</a></li>
+<li><a href="https://github.com/doczjs/docz" target="_blank" rel="noopener">docz</a></li>
+<li><a href="https://github.com/storybookjs/storybook" target="_blank" rel="noopener">storybook</a></li>
+<li><a href="https://github.com/mdx-js/mdx" target="_blank" rel="noopener">mdx</a></li>
+</ul>
+<h1 id="工程"><a href="#工程" class="headerlink" title="工程"></a>工程</h1><ul>
+<li><a href="https://github.com/lerna/lerna" target="_blank" rel="noopener">lerna</a> - monorepo 管理</li>
+<li><a href="https://github.com/lerna/lerna-changelog" target="_blank" rel="noopener">lerna-changelog</a> - 为 lerna 项目自动生成 changelog</li>
+<li><a href="https://github.com/eslint/eslint" target="_blank" rel="noopener">eslint</a> - JS 风格约束</li>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">eslint-config-airbnb</a></li>
+<li><a href="https://github.com/xojs/xo" target="_blank" rel="noopener">xo</a> - 封装自 eslint</li>
+<li><a href="https://github.com/prettier/prettier" target="_blank" rel="noopener">prettier</a> - 更主观的风格自动修改</li>
+<li><a href="https://github.com/yeoman/generator" target="_blank" rel="noopener">yeoman-generator</a> - 脚手架工具</li>
+<li><a href="https://github.com/zeit/serve" target="_blank" rel="noopener">serve</a> - 本地静态服务器</li>
+<li><a href="https://github.com/lukejacksonn/servor" target="_blank" rel="noopener">servor</a> - 本地静态服务器</li>
+<li><a href="https://github.com/mattdesl/budo" target="_blank" rel="noopener">budo</a> - 本地静态服务器</li>
+<li><a href="https://github.com/sindresorhus/np" target="_blank" rel="noopener">np</a> - npm publish 辅助，自动 push、打 tag、升版本等</li>
+<li><a href="https://github.com/okonet/lint-staged" target="_blank" rel="noopener">lint-staged</a> - eslint 提速，只 lint 提交的代码</li>
+<li><a href="https://github.com/marketplace/coveralls" target="_blank" rel="noopener">coveralls</a> - 覆盖率</li>
+<li><a href="https://github.com/typicode/husky" target="_blank" rel="noopener">husky</a> - 添加 git hooks</li>
+<li><a href="https://github.com/kentcdodds/cross-env" target="_blank" rel="noopener">cross-env</a> - 跨平台的环境变量声明</li>
+<li><a href="https://github.com/popomore/projj" target="_blank" rel="noopener">projj</a> - 本地 git 项目管理，支持 github 和 gitlab</li>
+<li><a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a> - 管理 node 版本</li>
+<li><a href="https://github.com/kimmobrunfeldt/concurrently" target="_blank" rel="noopener">concurrently</a> - 在 npm scripts 里并行执行命令</li>
+<li><a href="https://github.com/zeit/ncc" target="_blank" rel="noopener">@zeit/ncc</a> - 打包为 npm 包为一个文件</li>
+<li><a href="https://github.com/dylang/npm-check" target="_blank" rel="noopener">npm-check</a> - 检测依赖升级情况，和 yarn upgrade-interactive 配合着用，主要用来检测冗余依赖</li>
+<li><a href="https://github.com/mysticatea/cpx" target="_blank" rel="noopener">cpx</a> - 复制，支持 glob，并且可以 watch</li>
+<li><a href="https://github.com/Qard/onchange" target="_blank" rel="noopener">onchange</a> - 监听文件变动然后做一些事</li>
+<li><a href="https://github.com/Microsoft/just" target="_blank" rel="noopener">just</a> - 微软出的任务管理器</li>
+<li><a href="https://github.com/ternjs/tern" target="_blank" rel="noopener">tern</a> - 代码分析器，为不少编辑器服务</li>
+<li><a href="https://github.com/macbre/analyze-css" target="_blank" rel="noopener">analyze-css</a> - CSS选择器的复杂性和性能分析器</li>
+</ul>
+<h1 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h1><ul>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a></li>
+<li><a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ IDEA</a></li>
+<li><a href="https://codesandbox.io/" target="_blank" rel="noopener">codesandbox</a></li>
+<li><a href="https://stackblitz.com/" target="_blank" rel="noopener">stackblitz</a></li>
+</ul>
+<h1 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h1><ul>
+<li><a href="https://github.com/yargs/yargs" target="_blank" rel="noopener">yargs</a> - 命令行入口套件</li>
+<li><a href="https://github.com/yargs/yargs-parser" target="_blank" rel="noopener">yargs-parser</a> - 命令行参数解析</li>
+<li><a href="https://github.com/chalk/chalk" target="_blank" rel="noopener">chalk</a> - 输出不同颜色</li>
+<li><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">cheerio</a> - 用类 jQuery 语法处理 HTML</li>
+<li><a href="https://github.com/paulmillr/chokidar" target="_blank" rel="noopener">chokidar</a> - 文件监听</li>
+<li><a href="https://github.com/sindresorhus/clipboardy" target="_blank" rel="noopener">clipboardy</a> - 复制文本到粘贴板</li>
+<li><a href="https://github.com/visionmedia/debug" target="_blank" rel="noopener">debug</a> - 打印调试信息</li>
+<li><a href="https://github.com/brianc/node-deprecate" target="_blank" rel="noopener">deprecate</a> - 给过期警告</li>
+<li><a href="https://github.com/isaacs/node-glob" target="_blank" rel="noopener">glob</a> - 文件查找</li>
+<li><a href="https://github.com/terkelg/tiny-glob" target="_blank" rel="noopener">tiny-glob</a> - 文件查找</li>
+<li><a href="https://github.com/klaussinani/signale" target="_blank" rel="noopener">signale</a> - 漂亮的日志打印</li>
+<li><a href="https://github.com/npm/node-semver" target="_blank" rel="noopener">semver</a> - semver 版本处理</li>
+<li><a href="https://github.com/yeoman/update-notifier" target="_blank" rel="noopener">update-notifier</a> - 更新提醒</li>
+<li><a href="https://github.com/isaacs/rimraf" target="_blank" rel="noopener">rimraf</a> - 删除文件</li>
+<li><a href="https://github.com/dougwilson/nodejs-depd" target="_blank" rel="noopener">depd</a> - 给出 deprecated 警告</li>
+<li><a href="https://github.com/sindresorhus/execa" target="_blank" rel="noopener">execa</a> - 比 child_process 好用，返回 Promise</li>
+<li><a href="https://github.com/sindresorhus/ora" target="_blank" rel="noopener">ora</a> - 控制命令行光标，显示 loading 等</li>
+<li><a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="noopener">inquirer</a> - 交互式命令接口，比如 prompt</li>
+<li><a href="https://github.com/enquirer/enquirer" target="_blank" rel="noopener">enquirer</a> - 同上，更 cool 一些</li>
+<li><a href="https://github.com/epoberezkin/ajv" target="_blank" rel="noopener">ajv</a> - 参数校验</li>
+<li><a href="https://github.com/vadimdemedes/ink" target="_blank" rel="noopener">ink</a> - 用 React 处理命令行输出</li>
+<li><a href="https://github.com/sindresorhus/figures" target="_blank" rel="noopener">figures</a> - ✔︎ 等特殊字符，做了 windows 兼容处理</li>
+</ul>
+<h1 id="请求处理"><a href="#请求处理" class="headerlink" title="请求处理"></a>请求处理</h1><ul>
+<li><a href="https://github.com/github/fetch" target="_blank" rel="noopener">whatwg-fetch</a></li>
+<li><a href="https://github.com/sindresorhus/got" target="_blank" rel="noopener">got</a></li>
+<li><a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a></li>
+<li><a href="https://github.com/request/request" target="_blank" rel="noopener">request</a></li>
+<li><a href="https://github.com/ded/reqwest" target="_blank" rel="noopener">reqwest</a></li>
+<li><a href="https://github.com/ForbesLindesay/ajax" target="_blank" rel="noopener">ajax</a></li>
+<li><a href="https://github.com/then/then-request" target="_blank" rel="noopener">then-request</a></li>
+<li><a href="https://github.com/iriscouch/browser-request" target="_blank" rel="noopener">browser-request</a></li>
+<li><a href="https://github.com/visionmedia/superagent" target="_blank" rel="noopener">superagent</a></li>
+<li><a href="https://github.com/argunner/minAjax.js" target="_blank" rel="noopener">minAjax.js</a></li>
+<li><a href="https://github.com/pyrsmk/qwest" target="_blank" rel="noopener">qwest</a> - 第三方的 Ajax 库</li>
+<li><a href="https://github.com/fis-components/whatwg-fetch" target="_blank" rel="noopener">whatwg-fetch</a></li>
+<li><a href="https://github.com/webmodules/jsonp" target="_blank" rel="noopener">jsonp</a> - 跨域</li>
+<li><a href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank" rel="noopener">isomorphic-fetch</a></li>
+<li><a href="https://github.com/em-fe/em-jsonp" target="_blank" rel="noopener">em-jsonp</a> - 跨域</li>
+</ul>
+<h1 id="富文本相关"><a href="#富文本相关" class="headerlink" title="富文本相关"></a>富文本相关</h1><ul>
+<li><a href="https://github.com/mycolorway/simditor" target="_blank" rel="noopener">Simditor</a> - 简单快速的富文本编辑器</li>
+<li><a href="https://github.com/Integ/BachEditor" target="_blank" rel="noopener">BachEditor</a> - 一个有情怀的编辑器</li>
+<li><a href="https://github.com/tinymce/tinymce" target="_blank" rel="noopener">TinyMCE</a></li>
+<li><a href="https://github.com/toopay/bootstrap-markdown" target="_blank" rel="noopener">bootstrap-markdown</a></li>
+<li><a href="https://github.com/markedjs/marked" target="_blank" rel="noopener">marked</a> - markdown解析器</li>
+<li><a href="https://github.com/tylingsoft/markdown-plus" target="_blank" rel="noopener">Markdown Plus</a></li>
+<li><a href="https://github.com/pandao/editor.md" target="_blank" rel="noopener">Editor.md</a> - 开源在线Markdown编辑器</li>
+<li><a href="https://github.com/benweet/stackedit" target="_blank" rel="noopener">stackedit</a></li>
+<li><a href="https://imperavi.com/redactor/" target="_blank" rel="noopener">Redactor Text Editor</a></li>
+<li><a href="https://github.com/simonwaldherr/micromarkdown.js/" target="_blank" rel="noopener">micromarkdown.js</a> - 轻量级的md解析器</li>
+<li><a href="https://github.com/wangfupeng1988/wangEditor" target="_blank" rel="noopener">wangEditor</a> - 支持移动端的轻量级web富文本框</li>
+<li><a href="https://github.com/ckeditor/ckeditor4" target="_blank" rel="noopener">CKEditor</a> - 可视化 HTML 编辑器</li>
+<li><a href="https://github.com/quilljs/quill" target="_blank" rel="noopener">Quill</a> - 富文本编辑器</li>
+<li><a href="https://github.com/iq9891/ieditor" target="_blank" rel="noopener">iEditor</a> - 富文本编辑器</li>
+<li><a href="https://github.com/yabwe/medium-editor" target="_blank" rel="noopener">medium-editor</a> - Vue.js 官方推荐支持 Vue 的编辑器</li>
+<li><a href="https://github.com/ianstormtaylor/slate" target="_blank" rel="noopener">slate</a> - 一个完全可定制的框架，用于构建富文本编辑器</li>
+<li><a href="https://github.com/scrumpy/tiptap" target="_blank" rel="noopener">tiptap</a> -  Vue 的编辑器</li>
+</ul>
+<h1 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h1><ul>
+<li><a href="https://circleci.com/" target="_blank" rel="noopener">CircleCI</a></li>
+<li><a href="https://about.gitlab.com/product/continuous-integration/" target="_blank" rel="noopener">GitlabCi</a></li>
+<li><a href="https://www.appveyor.com/" target="_blank" rel="noopener">appveyor </a> - 适用于Windows和Linux的持续集成解决方案</li>
+<li><a href="https://jenkins.io/index.html" target="_blank" rel="noopener">Jenkins</a> - 一个支持 PHP 的连续集成平台</li>
+<li><a href="https://github.com/jolicode/JoliCi" target="_blank" rel="noopener">JoliCi </a> - 一个用 PHP 编写并由 DOCKER 供电的集成客户端</li>
+<li><a href="https://github.com/dancryer/phpci" target="_blank" rel="noopener">PHPCI</a> - 一个开源的 PHP 连续集成平台</li>
+<li><a href="https://semaphoreci.com/" target="_blank" rel="noopener">SemaphoreCI</a> - 开源和私人项目的集成平台</li>
+<li><a href="https://www.shippable.com/" target="_blank" rel="noopener">Shippable</a> - 一个基于 DOCKER 的开源和私有项目的连续集成平台</li>
+<li><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> - 持续整合平台</li>
+<li><a href="https://www.oracle.com/corporate/acquisitions/wercker/" target="_blank" rel="noopener">Wercker</a> - 持续整合平台</li>
+<li><a href="https://snyk.io/" target="_blank" rel="noopener">snyk.io</a> - 前端依赖检测</li>
+<li><a href="https://codecov.io/" target="_blank" rel="noopener">codecov.io</a> - 测试覆盖率报告</li>
+</ul>
+<h1 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h1><h2 id="在线编辑"><a href="#在线编辑" class="headerlink" title="在线编辑"></a>在线编辑</h2><ul>
+<li><a href="https://jsfiddle.net/" target="_blank" rel="noopener">jsfiddle</a></li>
+<li><a href="http://plnkr.co/" target="_blank" rel="noopener">plnkr</a></li>
+<li><a href="https://codepen.io/?__cf_chl_jschl_tk__=5fee95474f4d537a884f44573aaa135207d18b80-1578982064-0-AT5VPLmCoi8gwgXbQucZooe-zkYUIdVKTLQfQCiJYbT8YiwUEjtWESmH9suK0AGt-BlyKSY9RmrihAObMBwTUjC0rp-d6bzvBVWhDbrUCGTVHwOjCxmHxl_OLnmehHMwbMN6hPrVF_CV_6yZkn2Yt0zblulcYmW5tKiPszWRHYgKA2dVHKkb6HrtctJ7UbVvaKrXZtDeMalLUpxH0YwtnM9BWRxEzqsTYSvRzq5wpibpR8OkOFvf4TtE-fym71X4OOVJWWw20RosvYxGemH7sXtaP9q8io8djbjzPL5tv6-amEZ_0J5ViOvGFxnPYO_Ekg" target="_blank" rel="noopener">codepen</a> </li>
+<li><a href="http://jsbin.com/" target="_blank" rel="noopener">jsbin</a></li>
+</ul>
+<h2 id="图标管理"><a href="#图标管理" class="headerlink" title="图标管理"></a>图标管理</h2><ul>
+<li><a href="https://icomoon.io/" target="_blank" rel="noopener">icomoon</a></li>
+<li><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a></li>
+<li><a href="http://www.fontawesome.com.cn/" target="_blank" rel="noopener">fontawesome</a></li>
+</ul>
+<h2 id="其他在线工具"><a href="#其他在线工具" class="headerlink" title="其他在线工具"></a>其他在线工具</h2><ul>
+<li><a href="https://regexper.com/" target="_blank" rel="noopener">正则</a></li>
+<li><a href="https://prettydiff.com/" target="_blank" rel="noopener">文件对比</a></li>
+<li><a href="https://editor.method.ac/" target="_blank" rel="noopener">svg</a></li>
+<li><a href="https://dillinger.io/" target="_blank" rel="noopener">markdown</a></li>
+<li><a href="https://tinypng.com/" target="_blank" rel="noopener">图片压缩</a></li>
+<li><a href="https://www.processon.com/" target="_blank" rel="noopener">流程图，思维导图、UML、网络拓扑图</a></li>
+<li><a href="http://incaseofstairs.com/jsdiff/" target="_blank" rel="noopener">jsdiff在线对比工具</a></li>
+<li><a href="https://transfonter.org/" target="_blank" rel="noopener">transfonter</a> - 字体文件转换成 base64 格式</li>
+<li><a href="https://github.com/mozilla/send" target="_blank" rel="noopener">send</a> - 来自 Firefox 制造商的简单私密文件共享</li>
+<li><a href="https://github.com/faviator/faviator" target="_blank" rel="noopener">faviator</a> - 一个生成图标的库</li>
+<li><a href="https://github.com/muan/emoji" target="_blank" rel="noopener">emoji</a> - emoji 总览</li>
+</ul>
+<h1 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h1><ul>
+<li><a href="https://github.com/google/code-prettify" target="_blank" rel="noopener">google-code-prettify</a> - 一个可嵌入的脚本，可以使HTML代码更漂亮</li>
+<li><a href="https://highlightjs.org/" target="_blank" rel="noopener">highlight.js</a></li>
+<li><a href="https://craig.is/making/rainbows" target="_blank" rel="noopener">Rainbow</a></li>
+<li><a href="https://github.com/ajaxorg/ace" target="_blank" rel="noopener">ACE</a></li>
+<li><a href="https://github.com/codemirror/codemirror" target="_blank" rel="noopener">CodeMirror</a> - 浏览器内代码编辑器</li>
+<li><a href="https://github.com/aramk/crayon-syntax-highlighter" target="_blank" rel="noopener">Crayon Syntax Highlighter</a></li>
+<li><a href="https://github.com/PrismJS/prism" target="_blank" rel="noopener">prism</a> - 轻巧，健壮，优雅的语法高亮</li>
+</ul>
+<h1 id="音频-视频"><a href="#音频-视频" class="headerlink" title="音频/视频"></a>音频/视频</h1><ul>
+<li><a href="https://github.com/jplayer/jPlayer" target="_blank" rel="noopener">jPlayer</a></li>
+<li><a href="https://github.com/videojs/video.js" target="_blank" rel="noopener">video.js</a></li>
+<li><a href="https://github.com/paypal/accessible-html5-video-player" target="_blank" rel="noopener">Accessible HTML5 Video Player</a> - PayPal 开源的 HTML5 视频播放器</li>
+<li><a href="https://github.com/clappr/clappr" target="_blank" rel="noopener">Clappr</a> - 开源的Web视频播放器</li>
+<li><a href="https://github.com/sampotts/plyr" target="_blank" rel="noopener">Plyr</a></li>
+<li><a href="https://github.com/davatron5000/FitVids.js" target="_blank" rel="noopener">FitVids.js</a></li>
+<li><a href="https://github.com/dfcb/BigVideo.js" target="_blank" rel="noopener">BigVideo.js</a></li>
+<li><a href="https://github.com/bdougherty/BigScreen" target="_blank" rel="noopener">BigScreen</a></li>
+<li><a href="https://github.com/VodkaBears/Vide" target="_blank" rel="noopener">Vide</a></li>
+<li><a href="https://github.com/captbaritone/webamp" target="_blank" rel="noopener">winamp2-js</a></li>
+<li><a href="https://github.com/jaysalvat/buzz" target="_blank" rel="noopener">Buzz</a></li>
+<li><a href="https://github.com/mediaelement/mediaelement" target="_blank" rel="noopener">MediaElement.js</a> - 播放器 jquery 插件</li>
+<li><a href="https://github.com/Stanko/html-canvas-video-player" target="_blank" rel="noopener">html-canvas-video-player</a> - 支持 iOS 和 Android 的播放器</li>
+<li><a href="https://github.com/fregante/iphone-inline-video" target="_blank" rel="noopener">iphone-inline-video</a> - 让视频在iPhone上内联播放（防止自动全屏显示）</li>
+</ul>
+<h1 id="数据可视化库"><a href="#数据可视化库" class="headerlink" title="数据可视化库"></a>数据可视化库</h1><ul>
+<li><a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">echarts</a> - 它是用纯 JavaScript 编写的，基于 zrender 画布。它支持以画布、SVG(4.0+) 和 VML 的形式绘制图表。除了 PC 和移动浏览器外，ECharts 还可以与 node 上的 node-canvas 一起使用，以便进行高效的服务器端渲染（SSR）</li>
+<li><a href="https://github.com/highcharts/highcharts" target="_blank" rel="noopener">Highcharts JS</a> - 是一个广受欢迎的基于 SVG 的 JavaScript 图表库，针对旧的浏览器可降级到 VML 和画布。世界上最大的 100 家公司中，有 72 家公司（Facebook、Twitter 等）使用了这个库，这使得它成为世界上最流行的 JS 图表 API</li>
+<li><a href="https://github.com/antvis/g2" target="_blank" rel="noopener">G2</a></li>
+<li><a href="https://github.com/antvis/f2" target="_blank" rel="noopener">F2</a> - 移动端可视化图表</li>
+<li><a href="https://github.com/d3/d3" target="_blank" rel="noopener">D3</a> - 可能是最流行和使用最广泛的 JavaScript 数据可视化库。D3 用于基于数据的文档操作，并使用 HTML、SVG 和 CSS 让数据活起来。它基于 Web 标准，结合现代浏览器，不需要与专有框架耦合，将可视化组件和数据驱动的方法结合到 DOM 操作上。它允许你将任意数据绑定到文档对象模型（DOM），然后在文档上应用数据转换</li>
+<li><a href="https://github.com/chartjs/Chart.js" target="_blank" rel="noopener">Chart.js </a> - 一个非常受欢迎的开源 HTML5 图表库，它使用画布元素构建响应式 Web 应用。ChartJS 提供了混合图表类型，新的图表轴类型和漂亮的动画。它的设计简单而优雅，有 8 种基本的图表类型，你可以将该库与 moment.js 结合在一起使用，用于渲染时间轴</li>
+<li><a href="https://github.com/mrdoob/three.js/" target="_blank" rel="noopener">three.js</a> - ThreeJS 用 WebGL 创建 3D 动画。该项目的灵活性和抽象性意味着它也可用于 2 维或 3 维的数据可视化</li>
+<li><a href="https://github.com/metricsgraphics/metrics-graphics" target="_blank" rel="noopener">Metric-Graphics </a> - 用于可视化和布局时间序列数据。它相对较小（80kb），提供了小而优雅的线条图、散点图、直方图、柱状图和数据表，以及地格图（rug plot）和基本线性回归等特性</li>
+<li><a href="https://github.com/recharts/recharts" target="_blank" rel="noopener">Recharts</a> - 是一个使用 React 和 D3 构建的图表库，可以作为声明性的 React 组件使用。该库提供原生 SVG 支持，轻量级依赖树（D3 子模块）高度可定制。官网文档中可以找到很多例子</li>
+<li><a href="https://github.com/DmitryBaranovskiy/raphael" target="_blank" rel="noopener">Raphael</a> - 是一个 JavaScript 矢量库，可在 Web 中绘制矢量图形。该库使用 SVG W3C 和 VML 作为创建图形的基础，因此每个图形对象也是 DOM 对象，你可以附加 JavaScript 事件处理程序。Raphael 目前支持 Firefox 3.0+、Safari 3.0+、Chrome 5.0+、Opera 9.5+ 和 Internet Explorer 6.0+</li>
+<li><a href="https://github.com/c3js/c3" target="_blank" rel="noopener">C3</a> - 是一个基于 D3 的可重用 Web 应用图表库。该库为每个元素提供了相应的类，这样你就可以通过这些类来自定义样式，并通过 D3 直接扩展结构。它还提供了多种 API 和回调来访问图表状态。借助它们，你可以更新图表，即使是已经渲染好的图标</li>
+<li><a href="https://github.com/uber/react-vis" target="_blank" rel="noopener">React-vis</a> - 是 Uber 开发的一系列数据可视化组件，包括线 / 面 / 柱状图、热图、散热图、等高线图、六角热图等等。使用该库不需要事先掌握 D3 或任何其他 data-vis 库的知识，并提供了低级模块化的构建块组件，如 x/y 轴</li>
+<li><a href="https://github.com/bvaughn/react-virtualized" target="_blank" rel="noopener">React virtualized</a> - 是一组 React 组件，有效地呈现大型列表和表格数据。ES6、CommonJS 和 UMD 版本可以在每个分发版中使用，该项目支持 Webpack 4 工作流。请注意，为了避免版本冲突，必须将 react，react-dom 指定为 peer 依赖</li>
+<li><a href="https://github.com/FormidableLabs/victory" target="_blank" rel="noopener">Victory</a> - 在 Web 和 React Native 应用程序中使用相同的 API，以便于跨平台绘制图表。一种优雅而灵活的方式来利用 React 组件来支持实用的数据可视化</li>
+<li><a href="https://github.com/CartoDB/cartodb" target="_blank" rel="noopener">CartoDB</a> - 是一个位置智能和数据可视化工具，用于发现位置数据中的见解。你可以通过 Web 表单上传地理空间数据（Shapefiles、GeoJSON 等），并在数据集或地图上将其可视化，使用 SQL 进行搜索，并使用 CartoCSS 来应用地图样式</li>
+<li><a href="https://github.com/rawgraphs/raw" target="_blank" rel="noopener">Raw</a> - 是电子表格和数据可视化之间的连接，基于 d3.js 库创建基于向量的自定义可视化。它可以处理表格数据（电子表格和 CSV）和从其他应用程序复制和粘贴的文本。因为是 SVG 格式，所以可以使用矢量图形编辑器编辑，或直接嵌入到网页中</li>
+<li><a href="https://github.com/metabase/metabase" target="_blank" rel="noopener">Metabase</a> - 是一种相当快速和简单的方法，可以在不了解 SQL 的情况下创建数据仪表盘（分析师和数据专业人士可使用 SQL 模式）。你可以创建片段和度量指标，发送数据到 Slack（通过 MetaBot 在 Slack 中查看数据）等等。它可能是一个很好的工具，可用它在团队内部可视化数据，尽管可能需要做一些维护工作</li>
+<li><a href="https://github.com/TargetProcess/tauCharts" target="_blank" rel="noopener">tauCharts</a> - 一个基于 D3 的图表库。该库提供了一个声明接口，用于将数据字段快速映射到可视化属性，它的架构允许你使用插件构建切面和扩展图表行为</li>
+<li><a href="https://github.com/gionkunz/chartist-js" target="_blank" rel="noopener">chartist-js</a> - 简单的响应式图表</li>
+<li><a href="https://github.com/emeeks/semiotic" target="_blank" rel="noopener">semiotic</a> - 结合了 React 和 D3 的数据可视化框架</li>
+<li><a href="https://github.com/novus/nvd3" target="_blank" rel="noopener">nvd3</a> - 一个用 D3.js 编写的可重用的图表库</li>
+<li><a href="https://github.com/viserjs/viser" target="_blank" rel="noopener">viser</a> - 一个适合数据工程师的工具箱</li>
+<li><a href="https://github.com/nhn/tui.chart" target="_blank" rel="noopener">tui.chart</a> - 漂亮的数据可视化图表</li>
+<li><a href="https://github.com/markmarkoh/datamaps" target="_blank" rel="noopener">datamaps</a> - 使用 D3.js 在单个 JavaScript 件中自定义 SVG 地图可视化</li>
+<li><a href="https://github.com/jlord/sheetsee.js" target="_blank" rel="noopener">sheetsee.js</a> - 用于对谷歌表格的数据进行可视化</li>
+<li><a href="https://github.com/alibaba/BizCharts" target="_blank" rel="noopener">BizCharts</a> - 基于 G2 和 React 的数据可视化库</li>
+<li><a href="https://github.com/jacomyal/sigma.js" target="_blank" rel="noopener">sigma.js</a> - 一个专门用于图形绘制的 JavaScript 库</li>
+<li><a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">incubator-echarts</a> - 一个强大的、交互式的图表和可视化的浏览器库</li>
+<li><a href="https://github.com/almende/vis" target="_blank" rel="noopener">vis</a> - 一个动态的基于浏览器的可视化库</li>
+</ul>
+<h1 id="动画库"><a href="#动画库" class="headerlink" title="动画库"></a>动画库</h1><ul>
+<li><a href="https://github.com/julianshapiro/velocity" target="_blank" rel="noopener">velocity</a></li>
+<li><a href="https://github.com/greensock/GSAP" target="_blank" rel="noopener">GreenSock-JS</a></li>
+<li><a href="https://github.com/tweenjs/tween.js" target="_blank" rel="noopener">tween.js</a></li>
+<li><a href="https://github.com/juliangarnier/anime" target="_blank" rel="noopener">anime</a></li>
+<li><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">animate.css</a></li>
+<li><a href="https://github.com/rstacruz/jquery.transit" target="_blank" rel="noopener">Transit</a></li>
+<li><a href="https://github.com/matthieua/WOW" target="_blank" rel="noopener">WOW</a></li>
+<li><a href="https://github.com/anijs/anijs/" target="_blank" rel="noopener">AniJS</a></li>
+<li><a href="https://github.com/visionmedia/move.js" target="_blank" rel="noopener">Move.js</a></li>
+<li><a href="https://github.com/nckprsn/scrollme" target="_blank" rel="noopener">ScrollMe</a></li>
+<li><a href="https://github.com/h5bp/Effeckt.css" target="_blank" rel="noopener">Effeckt.css</a></li>
+<li><a href="http://nec.netease.com/library/category/#animation" target="_blank" rel="noopener">NEC</a></li>
+<li><a href="https://github.com/elrumordelaluz/csshake" target="_blank" rel="noopener">csshake</a></li>
+<li><a href="https://github.com/miniMAC/magic" target="_blank" rel="noopener">magic</a></li>
+<li><a href="https://github.com/tobiasahlin/SpinKit" target="_blank" rel="noopener">SpinKit</a></li>
+<li><a href="https://github.com/thomasxiii/lenticular.js" target="_blank" rel="noopener">lenticular.js</a></li>
+<li><a href="https://github.com/peachananr/interactive_3d" target="_blank" rel="noopener">interactive_3d</a></li>
+<li><a href="https://github.com/rampatra/animatescroll.js" target="_blank" rel="noopener">AnimateScroll</a></li>
+<li><a href="https://github.com/julianshapiro/blast" target="_blank" rel="noopener">Blast.js</a></li>
+<li><a href="https://github.com/tictail/bounce.js" target="_blank" rel="noopener">Bounce.js</a></li>
+<li><a href="https://github.com/cmiscm/stickerjs" target="_blank" rel="noopener">Sticker.js</a></li>
+<li><a href="https://github.com/scrollreveal/scrollreveal" target="_blank" rel="noopener">scrollReveal.js</a></li>
+<li><a href="https://github.com/hakimel/stroll.js" target="_blank" rel="noopener">stroll.js</a></li>
+<li><a href="https://github.com/gdsmith/jquery.easing" target="_blank" rel="noopener">jQuery Easing</a></li>
+<li><a href="http://www.justinaguilar.com/animations/index.html" target="_blank" rel="noopener">animations</a></li>
+<li><a href="https://github.com/bitshadow/iconate" target="_blank" rel="noopener">iconate.js</a></li>
+<li><a href="https://github.com/HubSpot/odometer" target="_blank" rel="noopener">Odometer</a></li>
+<li><a href="https://github.com/IanLunn/Hover" target="_blank" rel="noopener">Hover.css</a></li>
+<li><a href="https://github.com/ciar4n/imagehover.css" target="_blank" rel="noopener">imagehover.css</a></li>
+<li><a href="https://github.com/gudh/ihover" target="_blank" rel="noopener">iHover</a></li>
+<li><a href="https://github.com/hasinhayder/ImageCaptionHoverAnimation" target="_blank" rel="noopener">ImageCaptionHoverAnimation</a></li>
+<li><a href="https://github.com/AlloyTeam/AlloyFinger" target="_blank" rel="noopener">AlloyFinger</a></li>
+</ul>
+<h1 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h1><ul>
+<li><a href="http://mockjs.com/" target="_blank" rel="noopener">mockjs</a></li>
+<li><a href="https://www.easy-mock.com/" target="_blank" rel="noopener">easy-mock</a></li>
+<li><a href="https://www.json-generator.com/" target="_blank" rel="noopener">json-generator</a></li>
+<li><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">json-server</a></li>
+</ul>
+<h1 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h1><ul>
+<li><a href="https://github.com/liriliri/eruda" target="_blank" rel="noopener">eruda</a></li>
+<li><a href="https://github.com/Tencent/vConsole" target="_blank" rel="noopener">vConsole</a></li>
+<li><a href="https://github.com/TaroXin/vue-pretty-logger" target="_blank" rel="noopener">vue-pretty-logger</a></li>
+<li><a href="https://github.com/klaussinani/signale" target="_blank" rel="noopener">signale</a></li>
+</ul>
+<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><ul>
+<li><a href="https://www.npmjs.com/package/yazl" target="_blank" rel="noopener">yazl</a> - zip 压缩</li>
+<li><a href="https://github.com/thejoshwolfe/yauzl" target="_blank" rel="noopener">yauzl</a> - zip 压缩</li>
+<li><a href="https://github.com/mafintosh/tar-fs" target="_blank" rel="noopener">tar-fs</a> - tar 的压缩和解压缩</li>
+<li><a href="https://github.com/estools/esquery" target="_blank" rel="noopener">esquery</a> - 语法树查询</li>
+<li><a href="https://github.com/remarkjs/remark" target="_blank" rel="noopener">remark</a> - Markdown 语法解析器</li>
+<li><a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener">markdown-it</a> - Markdown 转 HTML</li>
+<li><a href="https://github.com/electron/electron" target="_blank" rel="noopener">electron</a></li>
+<li><a href="https://github.com/patr0nus/DeskGap" target="_blank" rel="noopener">DeskGap</a> - 类 electron ，由于不包含浏览器的部分，所以产物更小</li>
+<li><a href="https://github.com/antonmedv/fx" target="_blank" rel="noopener">fx</a> - 交互式 JSON 查看</li>
+<li><a href="https://fontawesome.com/" target="_blank" rel="noopener">fontawesome</a> - 字体资源</li>
+</ul>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://static.runoob.com/images/mix/4781442-d6a8c2e5714b4c44.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button"><i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.png"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2019/12/31/drag-into-picture/"><img class="next_cover lazyload" data-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1576758154437&amp;di=55c6d812bb92c0c2f98a5b188184d6f9&amp;imgtype=0&amp;src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F5ab5c9ea15ce36d3bfbc51f332f33a87e850b1bd.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>前端拖入文件上传</span></div></a></div></nav></div></div><footer id="footer" style="background-image: url(https://static.runoob.com/images/mix/4781442-d6a8c2e5714b4c44.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 升-fullstack</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">欢迎来到升弟弟的blog！</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.15/dist/snackbar.min.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
